@@ -1,0 +1,47 @@
+class Classroom:
+    def __init__(self, classroom_name, classroom_location, seats_in_class):
+        self.classroom_name = classroom_name
+        self.classroom_location = classroom_location
+        self.seats_in_class = seats_in_class
+
+    def describe_classroom(self):
+        """Print the classroom details."""
+        print(f"Classroom Name: {self.classroom_name}")
+        print(f"Location: {self.classroom_location}")
+        print(f"Number of Seats: {self.seats_in_class}")
+
+    def checksize_classroom(self, enrolled_students):
+        """Check if the classroom has enough seats for enrolled students."""
+        if enrolled_students <= self.seats_in_class:
+            print(f"The classroom has enough seats for {enrolled_students} enrolled students.")
+        else:
+            print(f"The classroom does not have enough seats for {enrolled_students} enrolled students.")
+
+
+# Create an instance of Classroom
+classroom = Classroom("Physics Lab", "Building A, Room 101", 30)
+
+# Print the attributes individually
+print(f"Classroom Name: {classroom.classroom_name}")
+print(f"Classroom Location: {classroom.classroom_location}")
+print(f"Seats in Class: {classroom.seats_in_class}")
+
+# Call the methods
+classroom.describe_classroom()
+classroom.checksize_classroom(25)  # Example with 25 enrolled students
+classroom.checksize_classroom(35)  # Example with 35 enrolled students
+
+# Create three different instances of Classroom
+classroom1 = Classroom("Chemistry Lab", "Building B, Room 202", 20)
+classroom2 = Classroom("Computer Science Room", "Building C, Room 303", 40)
+classroom3 = Classroom("Mathematics Classroom", "Building D, Room 404", 25)
+
+# Call describe_classroom() for each instance
+print("\nClassroom 1 Details:")
+classroom1.describe_classroom()
+
+print("\nClassroom 2 Details:")
+classroom2.describe_classroom()
+
+print("\nClassroom 3 Details:")
+classroom3.describe_classroom()
